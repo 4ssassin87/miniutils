@@ -11,6 +11,11 @@ void DirHandling(const char *path) {
 
     pDir = opendir(path);
 
+    if(pDir == 0) {
+        printf("A habido un error al ingresar al directorio!\n");
+        return EXIT_FAILURE;
+    }
+
     while((pDirent = readdir(pDir)) != NULL) {
 
         if((strcmp(pDirent->d_name,".")==0 || strcmp(pDirent->d_name,"..")==0 || (*pDirent->d_name) == '.' )) {
@@ -37,5 +42,5 @@ int main(int argc, char* argv[]) {
     
     DirHandling(argv[1]);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
