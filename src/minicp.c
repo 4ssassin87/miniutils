@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     int file_mode = 0;
     int file_sent = 0;
 
-    if (argc == 1) {
+    if (argc < 3) {
         printf("minicp: missing file operand\n");
     }
 
